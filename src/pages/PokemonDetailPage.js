@@ -7,12 +7,12 @@ function PokemonDetailPage() {
   const [pokemon, setPokemon] = useState(null);
 
   useEffect(() => {
-    async function getPokemonDetails() {
-      const pokemonResponse = await axios.get(
+    const getPokemonDetails = async () => {
+      const pokeResponse = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/${routeParams.pokemonName}`
       );
-      setPokemon(pokemonResponse.data);
-    }
+      setPokemon(pokeResponse.data);
+    };
     getPokemonDetails();
   }, []);
 
@@ -22,8 +22,8 @@ function PokemonDetailPage() {
       {/* <img src={pokemon.sprites.front_default} /> */}
       <p>
         Types:{" "}
-        {pokemon.types.map((typeObj) => (
-          <span>{typeObj.type.name} </span>
+        {pokemon.types.map((typeObject) => (
+          <span>{typeObject.type.name} </span>
         ))}
       </p>
       <p>Weight: {pokemon.weight} hectograms</p>

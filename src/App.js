@@ -14,7 +14,9 @@ function App() {
       </div>
       <br />
       <Routes>
-        <Route path="/" element={<PokemonDiscoveryPage />} />
+        <Route path="/" element={<PokemonDiscoveryPage />}>
+          <Route path=":filter" element={<PokemonDiscoveryPage />} />
+        </Route>
         <Route path="/details/:pokemonName" element={<PokemonDetailPage />} />
       </Routes>
     </div>
