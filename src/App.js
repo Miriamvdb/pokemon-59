@@ -1,5 +1,6 @@
 import { Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
+import PokemonDetailPage from "./pages/PokemonDetailPage";
 import PokemonDiscoveryPage from "./pages/PokemonDiscoveryPage";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <br />
       <Routes>
         <Route path="/" element={<PokemonDiscoveryPage />} />
+        <Route path="/details/:pokemonName" element={<PokemonDetailPage />} />
       </Routes>
     </div>
   );

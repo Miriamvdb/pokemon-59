@@ -1,7 +1,9 @@
+import { NavLink } from "react-router-dom";
+
 export default function PokemonBlock({ name }) {
   return (
     <div>
-      <p>{name}</p>
+      <NavLink to={`/details/${name}`}>{name}</NavLink>
     </div>
   );
 }
